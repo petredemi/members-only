@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>members only</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <h1 style="margin: 10px;">wellcome at telex</h1>  
+            <% if (locals.user) {%>
+            <div class="logoutbtn">
+                <h4>Wellcome <%= user.firstname %></h4>
+                <div>
+                    <button><a href="/addmessage">add message</a></button>
+                    <button><a href="/log-out">log out</a> </button>
+                </div>
+            </div>
+    <div class="logpage">       
+            <div class="members">
+                <h5 style="color: red; font-size: 1.1rem;">Club Members</h5>
+                <% members.forEach((member) => { %>
+                    <li>
+                        <div>
+                            <h5> <%= member.firstname %></h5>
+                            <h5 style="margin-left: 5px;"> <%= member.lastname %></h5>
+                        </div>
+                        <h6><%= member.status %></h6>
+                        <form class="delform"" action="/<%= member.id %>/delete-member" method="POST"
+                           style="display: <% if(user.status == 'admin' && member.status != 'admin'){ %> <%= display %> <%} %>;" >
+                            <button class="del" type="submit" onclick="return confirm('Are you sure you want to delete this member?');"
+                           >del</button>
+                        </form>
+                    </li>
+                <% }) %>
+            </div>
+
+        <% } else { %>
+        <button>
+            <a href="/sign-up">sign-up</a>
+        </button>
+        <button>
+            <a href="log-in">log-in</a>
+        </button>
+         <%}%>
+        <div class="container">
+        <div class="messages">
+                        <% if (locals.messages){ %>
+            <% messages.forEach((message) => { %>
+                <div class="message">
+                    <li>
+                        <p style="display: <%= display %>; margin-bottom: 1px; text-align: end; font-weight: 600 ; margin: 0px; color:darkblue;"><%= message.author %> </p>
+                        <p style="text-align: end; font-size: 0.8rem; color: red; padding: 3px; margin: 1px;"><%= message.date %></p>
+
+                    </li>
+                    <h4 style="margin: 2px;"></i> <%= message.messagetitle %> </h4>
+                    <p style="margin: 1px;"><em><%= message.messagetext %> </em></p>
+                    <form class="delform"" action="/<%= message.id %>/delete-message" method="POST" 
+                        style="display: <% if (locals.user != undefined){ %>
+                            <% if (user.status == 'admin'){ %>
+                                <%= display %>
+                            <% } else if (user.username == message.username) { %>
+                                <%= display %>
+                                <% } %>                            
+                            <% } %>; ">
+                      <button class="del" type="submit" onclick="return confirm('Are you sure you want to delete this message?');" > delete</button>
+                    </form>
+
+                </div>    
+            <% }) %>
+        </div>
+        </div>
+
+
+        <% }%>
+    </div>
+    </div>
+    
+</body>
+</html>

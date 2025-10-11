@@ -1,0 +1,36 @@
+body{
+    padding: 0px;
+    margin: 0px;
+
+}
+.sign-up{
+    background-color: rgb(29, 23, 58);
+    max-width: 600px;
+    margin: auto;
+    margin-top: 0px;
+    color: white;
+    padding: 10px;
+}
+h2{
+    text-align: center;
+}
+h4{
+    margin: 5px;
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 10px;
+    max-width: 340px;
+    
+}
+label{
+    width: 90px;
+}
+input{
+    width: 250px;
+}
+button{
+    margin: 10px;
+}

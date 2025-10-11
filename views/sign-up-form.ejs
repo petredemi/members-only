@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-up</title>
+    <link rel="stylesheet" href="sign-up.css">
+</head>
+<body>
+    <div class="sign-up">
+        <h2>telex club</h2>
+        <%- include("partials/errors.ejs") %>
+        <h4>Sign Up</h4>
+
+        
+            <form action="/sign-up" method="POST">
+                <li>
+                    <p style="color: red;"><%= locals.exist %></p>
+                </li>
+                <li>
+                    <label for="firstname">First name</label>
+                    <input id="firstname" name="firstname"type="text" />
+                </li>
+                <li>
+                    <label for="lastname">Last name</label>
+                    <input id="lastname" name="lastname" type="text" />
+                </li>
+                <li>
+                    <label for="username">Username</label>
+                    <input id="username" name="username" type="text" />
+                </li>
+                <li>
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" />
+                </li>
+              <button type="submit">Sign Up</button>
+            </form>
+        <button>    
+            <a href="/">first page</a>
+        </button>
+    </div>
+    
+</body>
+</html>

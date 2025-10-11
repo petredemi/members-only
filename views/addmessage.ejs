@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="newmessage.css">
+  </head>
+<body>
+  <div class="newmessage">
+    <div>
+          <h2>&#128508; Post a Message &#128508; </h2>
+          <h5>Only Club Members</h5>
+      </div>
+    <%- include("partials/errors.ejs") %>
+    <%= locals.user %>
+    <div class="form">
+<!--       <%- include("partials/errors.ejs") %>  -->
+        <form method="POST" action="/addmessage">
+           <li>
+               <label for="messagetitle">Title: </label>
+               <input type="text" name="messagetitle" id="title">
+           </li>
+           <li>
+               <label for="messagetext">message</label>
+               <textarea type="text" name="messagetext" id="text"></textarea>
+           </li>
+        
+           <button type="submit" style="background-color: white; border-radius: 6px; font-size: 1.1rem;">
+                <span style="font-size: 1.3rem;">&#128640;</span> send
+            </button>
+        </form>
+        <button class="btn">
+            <a href="/">back</a>
+        </button>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+.newmessage{
+    background-color: rgb(33, 34, 72);
+    max-width: 600px;
+    margin: auto;
+    margin-top: 0px;
+    padding: 10px;
+    color: white;
+}
+h2{
+    text-align: center;
+}
+h4{
+    margin: 5px;
+}
+form{
+    margin: 10px;
+    max-width: 500px;
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    list-style: none;
+}
+label{
+    width: 80px;
+}
+input{
+    width: 80%;
+}
+textarea{
+   width: 80%;
+   height: auto;
+   min-height: 100px;
+
+}
+
+button{
+    margin: 10px;
+}

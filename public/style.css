@@ -1,0 +1,111 @@
+body{
+    background-color: rgb(238, 237, 237);
+    padding: 0px;
+    margin: 0px;
+}
+
+.app{
+    background-color: rgb(25, 13, 47);
+    max-width: 700px;
+    margin: auto;
+    padding: 10px;
+}
+h1{
+    color: rgb(173, 164, 181);
+    margin-top: 50px;
+    text-align: center;
+}
+button{
+    margin-left: 10px;
+}
+.logoutbtn{
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+    margin-top: 20px;
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrapp;
+    margin: 5px;
+    list-style: none;
+}
+label{
+    background-color: antiquewhite;
+}
+input{
+    width: 200px;
+}
+.logpage{
+    background-color: bluee;
+}
+.messages{
+     background-color: rgb(25, 13, 47);
+}
+.message{
+    border: 1px solid red;
+    margin: 10px;
+    margin-top: 20px;
+    max-width: 500px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: rgb(251, 251, 243);
+}
+.message > h4{
+    margin: 2px;
+}
+.delform{
+    display: none;
+    justify-content: end;
+}
+.del{
+    background-color: rgb(245, 244, 229);
+    border-radius: 5px;
+}
+p{
+    margin: 2px;
+    line-height: 1.4;
+}
+.logpage{
+    display: flex;
+}
+.containerr{
+    display:grid;
+    grid-template-columns: minmax(0, 1fr) minmax(380px, 4fr);
+}
+.leftt{
+    display: flex;
+    color: aliceblue;
+    background-color: rgb(21, 101, 35);
+    width: 150px;
+    height: 500px;
+    margin-top: 20px;
+    overflow-x:hidden;
+}
+.members{
+    margin-top: 20pxx;
+    margin-right: 10px;
+    width: 150px;
+    padding-top: 20px;
+    background-color: rgb(28, 71, 28);
+
+}
+.members >li{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    color: aliceblue;
+    border: 1px solid rgb(201, 199, 199);
+    padding: 5px;
+}
+h5{
+    margin: 1px;
+}
+h6{
+    margin: 1px;
+    background-color: rgb(80, 158, 225);
+    margin-left: 0px;
+}
