@@ -10,22 +10,53 @@ body{
     margin: auto;
     padding: 10px;
 }
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo img{
+    border-radius: 50% 50%;
+}
+.letter{
+    text-align: center;
+    font-size: 2.3rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-weight: 700;
+    color: aliceblue;
+    background-color: rgb(9, 121, 67);
+}
 h1{
     color: rgb(173, 164, 181);
     margin-top: 50px;
-    text-align: center;
+    text-align: centerr;
 }
 button{
     margin-left: 10px;
+    font-size: 1.1rem;
+    border: 2px solid green;
+    border-radius: 5px;
+}
+.signbtns{
+    text-align: end;
 }
 .logoutbtn{
     background-color: antiquewhite;
+    text-align: end;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 30px;
     margin-top: 20px;
+    padding: 5px;
 }
+a{
+    text-decoration: none;
+}
+
 li{
     display: flex;
     justify-content: space-between;
@@ -44,6 +75,7 @@ input{
 }
 .messages{
      background-color: rgb(25, 13, 47);
+     overflow-x: hidden;
 }
 .message{
     border: 1px solid red;
@@ -72,18 +104,17 @@ p{
 .logpage{
     display: flex;
 }
-.containerr{
-    display:grid;
-    grid-template-columns: minmax(0, 1fr) minmax(380px, 4fr);
+.container{
+    display:flex;
 }
 .leftt{
     display: flex;
     color: aliceblue;
     background-color: rgb(21, 101, 35);
-    width: 150px;
+    max-width: 150px;
+    min-width: none;
     height: 500px;
     margin-top: 20px;
-    overflow-x:hidden;
 }
 .members{
     margin-top: 20pxx;
