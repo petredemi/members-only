@@ -21,16 +21,14 @@ body("password").trim()
     .isAlphanumeric().withMessage(`password ${passwordErr}`)
     .isLength({ min: 1, max: 10 }).withMessage(`password ${lengthErr}`),
 ];
-
-
 exports.firstPage = async (req, res) => {
     let x = await req.user
-    let idx = await db.getUsers()
-    console.log(idx)
-    if(x != undefined){
-        console.log(x.status)
-    }
+    //console.log(await db.getMessages())
+    console.log(req.locals)
     let dply= 'none'
+   // let count = await db.countLikes(messageID)
+   let all = await db.getMessages()
+   console.log(all.id)
     if(x != undefined){ 
         dply = 'flex' 
     }

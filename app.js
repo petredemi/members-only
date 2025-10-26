@@ -11,7 +11,6 @@ const router = Router()
 const routerAppMembers = require("./routers/mainRouter")
 const app = express();
 
-console.log(process.env.VIDEO_URL)
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -87,6 +86,6 @@ app.listen(PORT, (error) => {
    if (error) {
     throw error;
   }
-  console.log(`members only ${PORT}!`);
+  //console.log(`members only ${PORT}!`);
   
 });

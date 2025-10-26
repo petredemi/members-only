@@ -13,7 +13,9 @@ routerMembers.post('/addmessage', messagesController.addMessagePost)
 
 routerMembers.post('/:id/delete-message', messagesController.deleteMessagePost)
 routerMembers.post('/:id/delete-member', mainControllers.deleteMemberPost)
+routerMembers.post('/:id/likes', messagesController.nrLikesPost)
+//routerMembers.post('/:id/nolike', messagesController.nolikePost)
+
 //routerMembers.get('/log-out', mainControllers.logoutGet)
 //routerMembers.post('/', mainControllers.logoutPost)
-
 module.exports = routerMembers;

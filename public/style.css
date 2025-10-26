@@ -97,6 +97,10 @@ input{
     background-color: rgb(245, 244, 229);
     border-radius: 5px;
 }
+.like{
+    display: flex;
+    margin-top: 10px;
+}
 p{
     margin: 2px;
     line-height: 1.4;
