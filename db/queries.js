@@ -16,7 +16,9 @@ exports.getUsers = async () => {
 
 exports.getMessages = async () => {
   const { rows } = await pool.query("SELECT * FROM messages ORDER BY id DESC");
-  return Object.values(rows)
+  const messages = rows;
+ // console.log(messages)
+  return messages
 }
 exports.getMessage = async (idx) => {
   const {rows} = await pool.query("SELECT * FROM messages WHERE id = ($1)", [idx])
@@ -35,13 +37,13 @@ exports.deleteMember = async (id) =>{
 exports.incrementLike = async (count, messageID) => {
   await pool.query("UPDATE messages SET yeslike = ($1) WHERE id = ($2)", [count, messageID])
 } 
-exports.noLike = async (x, idx) => {
-  await pool.query("UPDATE messages SET nolike = ($1) WHERE id = ($2)", [x, idx])
+exports.noLike = async (nolikes, messageID) => {
+  await pool.query("UPDATE messages SET nolike = ($1) WHERE id = ($2)", [nolikes, messageID])
 
 }
-exports.nrLikes = async (messageID, userID, likes ) => {
+exports.nrLikes = async (messageID, userID, likes, nolikes ) => {
   //await pool.query("UPDATE likes SET likes = ($1) WHERE id = ($2)", [x, messageID])
-   await pool.query ("INSERT  INTO likes (messageID, userID, likes) VALUES ($1, $2, $3)", [messageID, userID, likes])
+   await pool.query ("INSERT  INTO likes (messageID, userID, likes, nolikes) VALUES ($1, $2, $3, $4)", [messageID, userID, likes, nolikes])
 } 
 exports.checkExist = async (userID, messageID) => {
   let {rows} = await pool.query("SELECT id FROM likes WHERE EXISTS (SELECT userID FROM likes WHERE userID = $1 AND messageID = $2)", [userID, messageID])

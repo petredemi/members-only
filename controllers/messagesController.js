@@ -34,6 +34,9 @@ exports.nrLikesPost = async (req, res) => {
    let exist;
    let messageID = await req.params.id
    let userID = await req.user.id
+   let {yes} = req.body
+   let {no} = req.body
+   console.log(yes + ' ' + no)
    let check = await db.checkExist(userID, messageID)
    if(check.length == 0){ 
       exist = false
@@ -41,7 +44,7 @@ exports.nrLikesPost = async (req, res) => {
       exist = true
    }
    if(!exist){
-         await db.nrLikes(messageID, userID, 'true')
+         await db.nrLikes(messageID, userID, 'true', 'false')
          let count = await db.countLikes(messageID, 'true')
          let nr = count.count
          await db.incrementLike(nr, messageID)
@@ -55,11 +58,9 @@ exports.nrLikesPost = async (req, res) => {
          let count = await db.countLikes(messageID, 'true')
          let nr = count.count
          await db.incrementLike(nr, messageID)
-
    }
    await res.redirect('/')
 }
-
 
 
 

@@ -22,23 +22,24 @@ body("password").trim()
     .isLength({ min: 1, max: 10 }).withMessage(`password ${lengthErr}`),
 ];
 exports.firstPage = async (req, res) => {
-    let x = await req.user
-    //console.log(await db.getMessages())
-    console.log(req.locals)
+  //  let u = await req.yes
+    let x = await req.user;
+    console.log(x)
     let dply= 'none'
    // let count = await db.countLikes(messageID)
    let all = await db.getMessages()
-   console.log(all.id)
     if(x != undefined){ 
         dply = 'flex' 
     }
-        await res.render('index', {
+    await res.render('index', {
             user: x,
-            messages: await db.getMessages(),
+            messages: all,
             members: await db.getUsers(),
             display: dply,
+            yes: 'yessss',
+            
         })
-}
+    }
 exports.loginGet = async (req, res) => {
     await res.render('log-in')
 }

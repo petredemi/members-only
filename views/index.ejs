@@ -78,11 +78,14 @@
                     <div  class="like">
                        <% if (locals.user) {%>
                         <form  action="/<%= message.id %>/likes"  method="post">
+                            <input type="hidden" name="yes" value="yes">
                             <button type="submit" id="yes" >&#128077;  <span style="font-size: 0.9rem;"><%= message.yeslike %> </span></button>
                         </form>
- <!--                       <form action="/<%= message.id %>/nolike" method="post">
-                            <button type="submit" id="yes" > &#128078; <span style="font-size: 0.9rem;"><%= message.nolike %> </span></button>
-                        </form> -->
+        <!--
+                       <form action="/<%= message.id %>/likes" method="post">
+                            <input type="hidden" name="no" value="no">
+                            <button type="submit" id="no" > &#128078; <span style="font-size: 0.9rem;"><%= message.nolike %> </span></button>
+                        </form>  -->
                         <% } else { %>
                             <button type="submit" id="yes" >&#128077;  <span style="font-size: 0.9rem;"><%= message.yeslike %> </span></button>
                         <% } %>
@@ -91,9 +94,9 @@
                 <% }) %>
             </div>
             <% } %>
-        </div>       
+        </div>
+         
     </div>
     </div>
-    
 </body>
 </html>
