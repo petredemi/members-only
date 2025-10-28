@@ -16,9 +16,8 @@ exports.getUsers = async () => {
 
 exports.getMessages = async () => {
   const { rows } = await pool.query("SELECT * FROM messages ORDER BY id DESC");
-  const messages = rows;
  // console.log(messages)
-  return messages
+  return Object.values(rows)
 }
 exports.getMessage = async (idx) => {
   const {rows} = await pool.query("SELECT * FROM messages WHERE id = ($1)", [idx])

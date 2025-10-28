@@ -34,8 +34,7 @@ exports.nrLikesPost = async (req, res) => {
    let exist;
    let messageID = await req.params.id
    let userID = await req.user.id
-   let {yes} = req.body
-   let {no} = req.body
+   let {yes, no} = req.body
    console.log(yes + ' ' + no)
    let check = await db.checkExist(userID, messageID)
    if(check.length == 0){ 

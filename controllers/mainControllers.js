@@ -22,11 +22,9 @@ body("password").trim()
     .isLength({ min: 1, max: 10 }).withMessage(`password ${lengthErr}`),
 ];
 exports.firstPage = async (req, res) => {
-  //  let u = await req.yes
     let x = await req.user;
     console.log(x)
     let dply= 'none'
-   // let count = await db.countLikes(messageID)
    let all = await db.getMessages()
     if(x != undefined){ 
         dply = 'flex' 
@@ -36,8 +34,6 @@ exports.firstPage = async (req, res) => {
             messages: all,
             members: await db.getUsers(),
             display: dply,
-            yes: 'yessss',
-            
         })
     }
 exports.loginGet = async (req, res) => {
@@ -76,7 +72,7 @@ exports.deleteMemberPost = async (req, res) => {
     //messageStorage.deleteMessage(req.params.id)
     let y = await req.user;
     let z = y.firstname;
-    let x = req.params.id
+    let x = await req.params.id
     //console.log(z)
    if(z != undefined){
     await db.deleteMember(x)
