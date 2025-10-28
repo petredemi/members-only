@@ -27,12 +27,14 @@ li{
     justify-content: space-between;
     list-style: none;
     margin: 10px;
+    margin-right: 5px;
     max-width: 350px;
     
 }
 label{
-    width: 90px;
+    width: 80px;
     margin-right: 5px;
+    font-size: 0.95rem;
 
 }
 input{

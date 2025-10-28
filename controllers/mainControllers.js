@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const db = require('../db/queries');
 const alphaErr = "must only contain letters.";
 const lengthErr = "must be between 1 and 10 characters.";
-const emailErr = "must be an email adress";
+const emailErr = "must be an email address";
 const emailLengthErr = 'must be at list 8 characters and maxim 30'
 const passwordErr = "must contain numbers and letters"
 

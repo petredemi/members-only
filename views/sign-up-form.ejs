@@ -8,16 +8,18 @@
 </head>
 <body>
     <div class="sign-up">
+       
         <h1>telex club</h1>
-        <%- include("partials/errors.ejs") %>
         <h3>Sign Up</h3>
+         <%- include("partials/errors.ejs") %>
         <div style="color: aliceblue; margin: 20px;">
+            <% if (!locals.errors) {%>
             <ul style="font-size: 0.9rem;">
                 <li>username should be an email address maximum 30 characters</li>
                 <li>password must be between 1 and 10 characters</li>
             </ul>
+            <% } %>
         </div>
-        
             <form action="/sign-up" method="POST">
                 <li>
                     <p style="color: red;"><%= locals.exist %></p>
