@@ -10,7 +10,7 @@
     <div class="app">
         <div class="logo">
             <div class="letter">t</div>
-            <h1 style="margin: 10px;">wellcome at telex</h1>
+            <h1 style="margin: 10px; margin-bottom: 20px; margin-top: 20px;">wellcome at telex</h1>
         </div>  
             <% if (locals.user) {%>
             <div class="logoutbtn">
@@ -49,6 +49,9 @@
             </button>
         </div>
          <%}%>
+         <div style="color: aliceblue; margin:20px; max-width: 500px;">Join the exclusive Club to post messages, opinions and ideas, to agree or 
+            disagree with the posts, Let know the club members and introduce yourself.
+         </div>
         <div class="container">
             <div class="left">
                 <p></p>
@@ -81,13 +84,15 @@
                             <input type="hidden" name="yes" value="yes">
                             <button type="submit" id="yes" >&#128077;  <span style="font-size: 0.9rem;"><%= message.yeslike %> </span></button>
                         </form>
-        <!--
+        
                        <form action="/<%= message.id %>/likes" method="post">
                             <input type="hidden" name="no" value="no">
                             <button type="submit" id="no" > &#128078; <span style="font-size: 0.9rem;"><%= message.nolike %> </span></button>
-                        </form>  -->
+                        </form> 
                         <% } else { %>
                             <button type="submit" id="yes" >&#128077;  <span style="font-size: 0.9rem;"><%= message.yeslike %> </span></button>
+                            <button type="submit" id="no" > &#128078; <span style="font-size: 0.9rem;"><%= message.nolike %> </span></button>
+
                         <% } %>
                     </div>
                     </div>

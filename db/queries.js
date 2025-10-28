@@ -36,7 +36,7 @@ exports.deleteMember = async (id) =>{
 exports.incrementLike = async (count, messageID) => {
   await pool.query("UPDATE messages SET yeslike = ($1) WHERE id = ($2)", [count, messageID])
 } 
-exports.noLike = async (nolikes, messageID) => {
+exports.incrementNoLike = async (nolikes, messageID) => {
   await pool.query("UPDATE messages SET nolike = ($1) WHERE id = ($2)", [nolikes, messageID])
 
 }
@@ -52,9 +52,18 @@ exports.countLikes = async (messageID, likes) => {
   let {rows} = await pool.query("SELECT COUNT(id) FROM likes WHERE messageID = $1 AND likes = $2", [messageID, likes])
   return rows[0]
 }
+exports.countNoLikes = async (messageID, nolike) => {
+  let {rows} = await pool.query("SELECT COUNT(id) FROM likes WHERE messageID = $1 AND nolikes = $2", [messageID, nolike])
+  return rows[0]
+}
 exports.updateLikes = async (likes, id) => {
   await pool.query("UPDATE likes SET likes = $1 WHERE id = $2", [likes, id])
 } 
+exports.updateNoLikes = async (nolike, id) => {
+  await pool.query("UPDATE likes SET nolikes = $1 WHERE id = $2", [nolike, id])
+} 
+
+
 exports.getIdLikes = async (messageID, userID) =>{
   const {rows} = await pool.query("SELECT * FROM likes WHERE messageID = $1 AND userID = $2", [messageID, userID])
   return rows[0]

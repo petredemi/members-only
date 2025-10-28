@@ -23,7 +23,7 @@ body("password").trim()
 ];
 exports.firstPage = async (req, res) => {
     let x = await req.user;
-    console.log(x)
+    //console.log(x)
     let dply= 'none'
    let all = await db.getMessages()
     if(x != undefined){ 
