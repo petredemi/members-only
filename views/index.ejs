@@ -60,7 +60,7 @@
             <div class="messages">
                 <% if (locals.messages) { %>
                 <% messages.forEach((message) => { %>
-                    <div class="message">
+                    <div class="message" id="<%= message.id %>">
                         <li>
                             <p style="display: <%= display %>; margin-bottom: 1px; text-align: end; font-weight: 600 ; margin: 0px; color:darkblue;"><%= message.author %> </p>
                             <p style="text-align: end; font-size: 0.8rem; color: red; padding: 3px; margin: 1px;"><%= message.date %></p>
@@ -101,6 +101,7 @@
             </div>
             <% } %>
         </div>
+        
          
     </div>
     </div>

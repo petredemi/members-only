@@ -58,7 +58,6 @@ exports.nrLikesPost = async (req, res) => {
          await db.incrementNoLike(nr_no, messageID)
    }else{
          let x = await db.getIdLikes(messageID, userID)
-         console.log(x)
          if( yes == 'yes'){
             if(x.likes == 'true'){
                await db.updateLikes('false', x.id)
@@ -89,7 +88,7 @@ exports.nrLikesPost = async (req, res) => {
          await db.incrementLike(nr, messageID)
          await db.incrementNoLike(nr_no, messageID)
    }
-   await res.redirect('/')
+   await res.redirect(`/#${messageID}`)
 }
 
 
